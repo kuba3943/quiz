@@ -34,47 +34,31 @@
 
     <header class="bg-success text-white">
         <div class="container text-center">
-            <h1>Congratulations!</h1>
-            <p class="lead" th:text="'You finished ' + ${difficulty} + ' quiz about ' + ${categoryName} + ' with score ' + ${points} + '/' + ${maxPoints} + '.'"></p>
+
+
+            <p class="lead" th:text="'TOP 3 PLAYERS IN ' + ${difficulty} + ' QUIZ ABOUT ' + ${category} + ':'"></p>
+            <table>
+                <thead>
+                <tr>
+                    <th> PLAYER</th>
+                    <th> RESULT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="result: ${sorted.entrySet()}">
+                    <td th:text="${result.getKey().name}" />
+                    <td th:text="${result.getValue()}" />
+                </tr>
+                </tbody>
+            </table>
+
+
+
+
+
             <a class="btn btn-primary" href="select">Play again!</a>
         </div>
     </header>
-
-
-    <section id="options">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form action="#" th:action="@{/summary}"  method="post">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Name: </label>
-                                <input  id="name" th:field="*{playerEntity.name}"
-                                       type="text"  />
-                                <input th:field="*{resultEntitty.category}" type="hidden">
-                                <input th:field="*{resultEntitty.difficulty}" type="hidden">
-                                <input th:field="*{resultEntitty.result}" type="hidden">
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
 
 
     <section id="contact" class="bg-light">
