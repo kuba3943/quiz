@@ -27,6 +27,11 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#top">Top Lists</a>
+                    </li>
+
+
                 </ul>
             </div>
         </div>
@@ -40,42 +45,14 @@
         </div>
     </header>
 
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>About this quiz</h2>
-                    <p class="lead">This quiz is all about knowledge!</p>
-                    <ul>
-                        <li>You can select from various different categories</li>
-                        <li>Feel free to pick proper difficulty level - you can choose between easy, medium and hard</li>
-                        <li>If you're brave enough, you can select random category and difficulty level - you'll never know what you'll get!</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Contact us</h2>
-                    <p class="lead">If you'd like to contact page author, feel free to <a href="mailto:abc@xyz.com">drop a line</a>!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="options">
+    <section id="top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <form action="#" th:action="@{/}" th:object="${gameOptions}" method="post">
 
                         <div class="form-group">
+                            <h2>Select difficulty and category to show top score</h2>
                             <h4>Difficulty:</h4>
                             <th:block th:each="difficulty : ${T(pl.kuba.quiz.frontend.Difficulty).values()}">
                                 <div class="form-check form-check-inline">
@@ -113,6 +90,38 @@
             </div>
         </div>
     </section>
+
+
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>About this quiz</h2>
+                    <p class="lead">This quiz is all about knowledge!</p>
+                    <ul>
+                        <li>You can select from various different categories</li>
+                        <li>Feel free to pick proper difficulty level - you can choose between easy, medium and hard</li>
+                        <li>If you're brave enough, you can select random category and difficulty level - you'll never know what you'll get!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Contact us</h2>
+                    <p class="lead">If you'd like to contact page author, feel free to <a href="mailto:kuba.domagala3@gmail.com">drop a line</a>!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
 
     <!-- Footer -->
